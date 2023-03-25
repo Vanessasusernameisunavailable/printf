@@ -65,27 +65,4 @@ int write_number(int is_negative, int ind, char buffer[],
 
 	UNUSED(size);
 
-	if ((flags & F_ZERO) && !(flags & F_MINUS))
-		padd = '0';
-	if (is_negative)
-		extra_ch = '-';
-	else if (flags & F_PLUS)
-		extra_ch = '+';
-	else if (flags & F_SPACE)
-		extra_ch = ' ';
 
-	return (write_num(ind, buffer, flags, width, precision,
-		length, padd, extra_ch));
-}
-
-/**
- * write_num - Write a number using a bufffer
- * @ind: Index at which the number starts on the buffer
- * @buffer: Buffer
- * @flags: Flags
- * @width: width
- * @prec: Precision specifier
- * @length: Number length
- * @padd: Pading char
- * @extra_c: Extra char
-*/
